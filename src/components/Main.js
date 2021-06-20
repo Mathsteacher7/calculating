@@ -5,7 +5,8 @@ import Top from "./top/Top";
 
 const Main = () => {
   const [shift, setShift] = React.useState(false);
-  const [showOnMonitor, setShowOnMonitor] = React.useState("test");
+  const [showOnMonitor, setShowOnMonitor] = React.useState("");
+  const [lastAnswer, setLastAnswer] = React.useState("");
 
   return (
     <div className="main">
@@ -15,6 +16,8 @@ const Main = () => {
         shift={shift}
         setShowOnMonitor={setShowOnMonitor}
         showOnMonitor={showOnMonitor}
+        lastAnswer={lastAnswer}
+        setLastAnswer={setLastAnswer}
       />
     </div>
   );
