@@ -1,14 +1,36 @@
 import React from "react";
 
-const Bottom = ({shift}) => {
+const Bottom = ({ shift, setShowOnMonitor, showOnMonitor }) => {
+  const clicking = (value) => {
+    const lastShow = showOnMonitor;
+    setShowOnMonitor(`${lastShow}${value}`);
+  };
+
+  const deleting = () => {
+    const lastShow = showOnMonitor.slice(0, -1);
+    setShowOnMonitor(lastShow);
+  };
+
+  const reseting = () => {
+    setShowOnMonitor("");
+  };
   return (
     <div className="bottom">
       <div>
-        <button type="button">7</button>
+        <button type="button" onClick={() => clicking("7")}>
+          7
+        </button>
         <button type="button">8</button>
         <button type="button">9</button>
-        <button type="button">{shift ? "INS" : "DEL"} </button>
-        <button type="button">AC</button>
+        <button
+          type="button"
+          onClick={shift ? () => console.log("I am not ready yet") : deleting}
+        >
+          {shift ? "INS" : "DEL"}{" "}
+        </button>
+        <button type="button" onClick={reseting}>
+          AC
+        </button>
       </div>
       <div>
         <button type="button">4</button>

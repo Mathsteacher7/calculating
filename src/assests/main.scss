@@ -1,2 +1,15 @@
 @import "bottom";
 @import "top";
+@import "monitor";
+
+body {
+  background-color: grey;
+}
+
+.main {
+  width: 310px;
+  background-color: black;
+  padding-top: 10px;
+  display: block;
+  margin: 200px auto;
+}
